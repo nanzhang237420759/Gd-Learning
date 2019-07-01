@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head> 
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+    }
+    a{
+        text-decoration: none;
+    }
+    ul,ol {
+        list-style: none ;
+    }
+    #hd {
+        background: #fff; 
+        border-bottom: 1px solid #dcdcdc;
+    }
+    .topbar{
+        margin: 0 auto;
+        width: 1000px;
+        height: 60px; 
+    }
+
+    .topbar .nav li {
+        float: left;
+        margin: 0 20px;
+    }
+
+    .topbar .serch {
+        padding-top:10px;
+    }
+
+    .topbar .serch input{
+        width:200px;
+        height:38px;
+        border:1px solid #dcdcdc;
+    }
+    .topbar .serch button{
+        width:60px;
+        height:40px;
+        color: #fff;
+        background:#fc5a34;
+    } 
+    .logo{
+        width: 160px;
+        height: 60px;
+        line-height:  60px;
+        color:#fff;
+        background:url("images/logo-bg.png")
+    }
+    .logo span{
+        font-size: 18px;
+    }
+    
+
+    .topbar .inner a{
+        color:#333;
+        font-size: 16px;
+        line-height:  60px;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+</style>
+<body>
+    <div id="hd">
+        <div class="topbar">
+          <div class="inner">
+                <div class="logo fl">
+                    <img src="images/logo.png">
+                    <span>美食天下</span>
+                </div>
+                <div class="nav fl">
+                    <ul>
+                        <li>首页</li>
+                        <li>菜谱分类</li>
+                        <li>发布菜谱</li>
+                    </ul>
+                </div>
+                <div class="serch fl"> 
+                    <form>
+                        <input type="text" />
+                        <button>搜索</button>
+                    </form>
+                </div>   
+                <div class="user fr">
+                    <a href="">登录</a>
+                    <a href="">注册</a>   
+                </div>
+          </div> 
+        </div>
+    </div>
+    <div id="bd">body</div>
+    <div id="ft">foot</div>
+</body>
+</html>
