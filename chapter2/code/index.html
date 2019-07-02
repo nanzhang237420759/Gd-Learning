@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>美食天下</title>
+</head> 
+<style>
+    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,dd,dl,dt,li,ol,ul,input,select,button,textarea {padding: 0;margin: 0;border: none;}
+    a{
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+    }
+
+    body{
+        width: 100%;
+        height: 100%; 
+        font-family: "微软雅黑", "Arial", "SimSun";
+        background: #f7f7f7;
+    
+    }
+
+    ul,ol {
+        list-style: none ;
+    }
+
+
+    .fl{
+        float: left;
+    }
+
+    .fr{
+        float: right;
+    }
+
+    #hd {
+        background: #fff; 
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .topbar{
+        margin: 0 auto;
+        width: 1000px;
+        height: 60px; 
+    }
+
+    .topbar .nav{
+        height: 100%
+    }
+
+    .topbar .nav li {
+        float: left;
+        margin: 0 20px;
+        line-height: 58px;
+        text-align: center;
+    }
+
+    .topbar .serch {
+        margin-left: 20px;
+        padding-top:10px;
+    }
+
+    .topbar .serch input{
+        width:200px;
+        height:38px;
+        border:1px solid #dcdcdc;
+    }
+    .topbar .serch button{
+        width:60px;
+        height:40px;
+        color: #fff;
+        background:#fc5a34;
+    } 
+    .topbar .logo{
+        width: 240px;
+        height: 100%;
+        line-height:  60px;
+        margin-right: 20px;
+        text-align: center;
+        color:#fff;
+        background:url("images/logo-bg.png")
+    }
+    .topbar .logo span{
+        font-weight: bold;
+        font-size: 18px;
+        font-size: 18px;
+    }
+    
+    .topbar .user {
+        font-size: 16px;
+        line-height:  60px;
+    }
+
+    .topbar .user a{
+        color: #333;
+        margin-right: 20px;
+    }
+    
+
+    .ft{
+        position: relative;
+        background-color: #fafafa;
+        background: #f0f0f0;
+    }
+
+    .ft .foot{ 
+        width: 1000px; 
+        margin: 0 auto; 
+        padding-bottom: 20px;
+        font-size:14px;
+        text-align: center;
+    }
+
+    .ft .foot p{
+        padding-top: 20px;
+    }
+
+    .ft .foot .link a{
+        margin-right: 30px;
+    }
+ 
+    #bd{ 
+        margin: 30px auto 40px;
+    }
+
+    .bdc{
+        width: 1000px; 
+        margin: 0 auto;
+        overflow:hidden;
+        zoom:1;
+    }
+
+    .bd-sd{
+        float: left;
+        width: 240px;
+        background: #fff;
+        padding:42px 0 42px 0;
+    }
+    
+    .bd-sd ul li {
+        padding-left: 80px;
+    }
+
+    .bd-sd ul li a {
+        font-size: 16px;
+        line-height: 50px;
+        
+    }
+
+    .bd-sd img{
+        margin-right: 20px;
+    }
+
+    .bd-mn{
+        float: right;
+        width: 740px;
+    }
+
+    
+ 
+</style>
+<body>
+    <div id="hd">
+        <div class="topbar"> 
+          <div class="logo fl">
+            <img src="images/logo.png">
+            <span>美食天下</span>
+            </div>
+            <div class="nav fl">
+                <ul class="fl">
+                    <li><a href="">首页</a></li>
+                    <li><a href="">菜谱分类</a></li>
+                    <li><a href="">发布菜谱</a></li>
+                </ul>
+            </div>
+            <div class="serch fl"> 
+                <form>
+                    <input type="text" placeholder="搜索菜谱" />
+                    <button>搜索</button>
+                </form>
+            </div>   
+            <div class="user fr">
+                <a href="login.html">登录</a>
+                <a href="reg.html">注册</a>   
+            </div>
+        </div>
+    </div>
+    <div id="bd">
+        <div class="bdc">
+            <div class="bd-sd"> 
+                <ul>
+                    <li><a href=""><img src="images/icon1.png">早餐</a></li>
+                    <li><a href=""><img src="images/icon2.png">午餐</a></li>
+                    <li><a href=""><img src="images/icon3.png">晚餐</a></li> 
+                </ul> 
+            </div>
+            <div class="bd-mn"> right </div>
+
+        </div> 
+    </div>
+    <div class="ft">
+        <div class="foot">
+          <p class="link">
+              <a href="">首页</a>
+              <a href="">菜谱分类</a>
+              <a href="">发布菜谱</a>
+              <a href="">登录</a>
+              <a href="">注册</a>
+          </p>
+          <p>
+                Copyright © xiachufang.com 京B2-20180499 京ICP备13009078号-1 京公网安备11010802022310号
+          </p>
+          <p class="info">
+                违法和不良信息举报电话：010-52800126 举报邮箱：talk@xiachufang.com
+          </p>
+        </div>
+    </div>
+</body>
+</html>
