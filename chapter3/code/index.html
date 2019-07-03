@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>美食天下</title> 
     <link href="css/common.css" type="text/css" rel="Stylesheet"/>
+    <link href="css/swiper.min.css" type="text/css" rel="Stylesheet"/>
     <link href="css/style.css" type="text/css" rel="Stylesheet"/>
 </head> 
+   
+    
 
 
 <body>
@@ -45,7 +48,58 @@
                     <li><a href=""><img src="images/icon3.png">晚餐</a></li> 
                 </ul> 
             </div>
-            <div id="right" class="bd-mn"> right </div>
+            <div id="right" class="bd-mn"> 
+                <div class="banner"> 
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/banner.png"></img> 
+                                <div class="desc">
+                                    <h3>冰欺凌</h3>
+                                    <p>18人点赞，by小鹿</p>
+                                </div> 
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner2.png"></img>
+                                <div class="desc">
+                                        <h3>长寿面</h3>
+                                        <p>20人点赞，by小鹿</p>
+                                    </div> 
+                            </div> 
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div> 
+                    </div>
+                </div>
+                
+                <div class="list-box">
+                    <header>
+                        <h3>流行菜谱</h3>
+                        <a href="" class="more">全部</a>
+                    </header>
+                    <div class="contents">
+                        <ul>
+                            <li>
+                                <img src="images/content1.png"></img>
+                                <h4>小葱麻油酱油面</h4>
+                                <span>by 小小</span><span><img src="images/dianzan.png">9999</span>
+                            </li>
+                            <li>
+                                    <img src="images/content1.png"></img>
+                                    <h4>小葱麻油酱油面</h4>
+                                    <span>by 小小</span><span><img src="images/dianzan.png">9999</span>
+                                </li>
+                                <li>
+                                        <img src="images/content1.png"></img>
+                                        <h4>小葱麻油酱油面</h4>
+                                        <span>by 小小</span><span><img src="images/dianzan.png">9999</span>
+                                    </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
 
         </div> 
     </div>
@@ -67,10 +121,23 @@
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
     <script>   
-        $(function(){ 
-    
-    
+        $(function(){   
+            var mySwiper = new Swiper ('.swiper-container', {
+                autoplay:{
+                    delay: 3000,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: false
+                },
+                
+                // 如果需要分页器
+                pagination: {
+                     el: '.swiper-pagination',
+                }
+                 
+                 
+            }); 
         });
     </script> 
 </body> 

@@ -120,3 +120,52 @@
     float: right;
     width: 740px;
 }
+
+.banner{  
+    width: 100%;
+    text-align: center;
+}
+
+.banner .swiper-container{
+    height:280px;
+}
+
+.banner img{
+    width:100%;
+}
+   
+
+.banner .desc{
+    position: absolute; 
+    padding: 15px 30px;
+    width: 40%;
+    background: linear-gradient(to right, rgba(249, 63, 67, 0.6), rgba(253, 130, 36, 0.6), rgba(255, 255, 255, 0));
+    bottom: 0;
+    text-align: left;
+    color: #fff;
+}
+ 
+.list-box{
+    margin-top: 40px;
+}
+
+.list-box header{
+    margin-bottom: 18px;
+    position: relative;
+}
+ 
+.list-box header .more {
+    position: absolute;
+    top: 4px;
+    right: 0; 
+    color: #fc5a34;
+}
+ 
+
+.list-box .contents ul li{
+    width: 230px;
+    float: left;
+    overflow: hidden;
+    margin-right: 15px;
+    background:  #fff;
+}
