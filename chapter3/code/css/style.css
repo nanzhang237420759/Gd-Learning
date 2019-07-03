@@ -1,0 +1,122 @@
+#hd {
+    background: #fff; 
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.topbar{
+    margin: 0 auto;
+    width: 1000px;
+    height: 60px; 
+}
+
+.topbar .nav{
+    height: 100%
+}
+
+.topbar .nav li {
+    float: left;
+    margin: 0 20px;
+    line-height: 58px;
+    text-align: center;
+}
+
+.topbar .serch {
+    margin-left: 20px;
+    padding-top:10px;
+}
+
+.topbar .serch input{
+    width:200px;
+    height:38px;
+    border:1px solid #dcdcdc;
+}
+.topbar .serch button{
+    width:60px;
+    height:40px;
+    color: #fff;
+    background:#fc5a34;
+} 
+.topbar .logo{
+    width: 240px;
+    height: 100%;
+    line-height:  60px;
+    margin-right: 20px;
+    text-align: center;
+    color:#fff;
+    background:url("images/logo-bg.png")
+}
+.topbar .logo span{
+    font-weight: bold;
+    font-size: 18px;
+    font-size: 18px;
+}
+
+.topbar .user {
+    font-size: 16px;
+    line-height:  60px;
+}
+
+.topbar .user a{
+    color: #333;
+    margin-right: 20px;
+}
+
+
+.ft{
+    position: relative;
+    background-color: #fafafa;
+    background: #f0f0f0;
+}
+
+.ft .foot{ 
+    width: 1000px; 
+    margin: 0 auto; 
+    padding-bottom: 20px;
+    font-size:14px;
+    text-align: center;
+}
+
+.ft .foot p{
+    padding-top: 20px;
+}
+
+.ft .foot .link a{
+    margin-right: 30px;
+}
+
+#bd{ 
+    margin: 30px auto 40px;
+}
+
+.bdc{
+    width: 1000px; 
+    margin: 0 auto;
+    overflow:hidden;
+    zoom:1;
+}
+
+.bd-sd{
+    float: left;
+    width: 240px;
+    background: #fff;
+    padding:42px 0 42px 0;
+}
+
+.bd-sd ul li {
+    padding-left: 80px;
+}
+
+.bd-sd ul li a {
+    font-size: 16px;
+    line-height: 50px;
+    
+}
+
+.bd-sd img{
+    margin-right: 20px;
+}
+
+.bd-mn{
+    float: right;
+    width: 740px;
+}
