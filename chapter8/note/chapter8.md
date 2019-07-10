@@ -540,3 +540,341 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
    		${data.title} <br>
    	</c:forEach>
    ```
+
+3. dao
+
+   ```java
+   public List<CookBook> listAll()throws Exception {
+   		String sql = "select * from cookbook";
+   		List<CookBook> result = null;
+   		Connection conn = DBUtil.getConn();
+   		result = runner.query(conn, sql, new BeanListHandler<CookBook>(CookBook.class));
+   		DBUtil.close(null, null, conn);
+   		return result;
+   	}
+   	
+   ```
+
+   
+
+4. servlet
+
+   ```java
+    else if ("list".equals(action)) {
+   			try {
+   				List<CookBook> cookBookList = cookBookService.listAll();
+   				request.setAttribute("datas", cookBookList);
+   				request.getRequestDispatcher("cookBookList.jsp").forward(request,response);
+   			} catch (Exception e) {
+   				// TODO Auto-generated catch block
+   				e.printStackTrace();
+   				request.getRequestDispatcher("index.jsp").forward(request,response);
+   			}  
+   		}
+   ```
+
+   
+
+5. jsp
+
+   ```jsp
+   <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+   
+   <!DOCTYPE html>
+   
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+     <title>菜谱列表</title>
+     <link rel="stylesheet" href="css/style.css" />
+     <link rel="stylesheet" href="css/swiper.min.css" />
+     <style>
+       .crumbs {
+         margin: 0 auto;
+         width: 1000px;
+         height: 62px;
+         line-height: 62px;
+       }
+   
+       .crumbs a {
+         cursor: pointer;
+       }
+   
+       .crumbs .crumbsIndex {
+         color: #fc5a34;
+       }
+   
+       .menuTypeList {
+         margin-right: 20px;
+         float: left;
+         width: 604px;
+         padding: 28px 38px 56px 38px;
+         background: #fff;
+       }
+   
+       .menuTypeList h1 {
+         font-size: 24;
+         margin-bottom: 16px;
+       }
+   
+       .typeSwitch {
+         margin-bottom: 38px;
+       }
+   
+       .typeSwitch .newest {
+         color: #fc5a34;
+         padding: 0 10px 0 0;
+         border-right: 1px solid #000;
+       }
+   
+       .typeSwitch a {
+         padding-left: 10px;
+         cursor: pointer;
+         text-decoration: none;
+         line-height: 20px;
+       }
+   
+       .menuList li {
+         margin-bottom: 30px;
+         width: 100%;
+         border: 1px solid #e8e8e8;
+         cursor: pointer;
+       }
+   
+       .menuList li .listImg {
+         float: left;
+         width: 230px;
+       }
+   
+       .menuList li .listImg img {
+         width: 100%;
+       }
+   
+       .listDetails {
+         float: left;
+         padding: 27px;
+         width: calc(100% - 290px);
+       }
+   
+       .listDetails h2 {
+         font-size: 20px;
+         margin-bottom: 5px;
+       }
+   
+       .listDetails p {
+         margin-bottom: 5px;
+         font-size: 15px;
+       }
+   
+       .listDetails span {
+         font-size: 13px;
+       }
+   
+       .listDetails .author {
+         color: #a6784c;
+       }
+   
+       .listDetails .time {
+         float: right;
+       }
+   
+       .listDetails .fabulous b {
+         font-weight: normal;
+       }
+   
+       .listDetails .fabulous img {
+         width: 25px;
+       }
+   
+       .paging {
+         text-align: center;
+       }
+   
+       .paging span {
+         margin: 0 20px;
+         cursor: pointer;
+       }
+   
+       .paging a {
+         display: inline-block;
+         min-width: 20px;
+         line-height: 27px;
+         color: #fc5a34;
+         border-radius: 4px;
+         text-decoration: none;
+         cursor: pointer;
+       }
+   
+       .paging .activate {
+         color: #fff;
+         background: #fc5a34;
+       }
+   
+       .paging .nextPage {
+         color: #fc5a34;
+       }
+   
+       .popularMenu {
+         float: left;
+         width: 232px;
+         padding: 30px 34px 10px;
+         background: #fff;
+       }
+   
+       .popularMenu h3 {
+         display: inline-block;
+         padding-top: 5px;
+       }
+   
+       .popularMenu img {
+         margin-bottom: 10px;
+       }
+   
+       .popularMenuList li {
+         padding-bottom: 18px;
+         margin-bottom: 20px;
+         border: 1px solid #f3f3f3;
+         cursor: pointer;
+       }
+   
+       .popularMenuList li p {
+         margin-bottom: 5px;
+         font-size: 17px;
+         margin-left: 20px;
+       }
+   
+       .popularMenuList li img {
+         width: 230px;
+         margin-bottom: 20px;
+       }
+   
+       .popularMenuList li span {
+         display: inline-block;
+         font-size: 15px;
+       }
+   
+       .popularMenuList li .author {
+         width: 50%;
+         margin-left: 20px;
+       }
+   
+       .popularMenuList li .author {
+         float: left;
+         vertical-align: middle;
+         color: #a6784c;
+         width: 40%;
+       }
+   
+       .popularMenuList li .fabulous {
+         float: right;
+         margin-right: 20px;
+       }
+   
+       .popularMenuList li .fabulous img {
+         width: 25px;
+         margin: 0;
+       }
+   
+       .popularMenuList li .fabulous b {
+         font-weight: normal;
+       }
+     </style>
+   </head>
+   
+   <body>
+     <!-- 头部 -->
+     <jsp:includepage="include/header.jsp"/>
+     <!-- 头部 -->
+    
+   
+     <div class="crumbs">
+       <a class="crumbsIndex">首页</a>
+       >
+       <a>早餐</a>
+     </div>
+   
+     <!-- 内容 -->
+     <div class="contentBox">
+       <div class="menuTypeList">
+         <h1>早餐</h1>
+         <div class="typeSwitch">
+           <a class="newest">最新菜谱</a>
+           <a>最受欢迎菜谱</a>
+         </div>
+         <ul class="menuList">
+         <c:forEach var="data" items="${datas}">
+           <li class="clearfix">
+             <div class="listImg">
+               <img src="img/content7.png">
+             </div>
+             <div class="listDetails">
+               <h2>${data.title }</h2>
+               <p class="surplus">
+                 ${data.tags }
+               </p>
+               <p class="author">
+                 by ${data.user }
+               </p>
+               <span class="fabulous"><img src="img/dianzan.png"><b>999999</b></span>
+               <span class="time">${data.createDate } </span>
+             </div>
+           </li>
+           </c:forEach>
+            
+         </ul>
+         <div class="paging">
+           <span>上一页</span>
+           <a class="activate">1</a>
+           <a>2</a>
+           <a>3</a>
+           <a>4</a>
+           <a>5</a>
+           <a>...</a>
+           <span class="nextPage">下一页</span>
+         </div>
+       </div>
+       <div class="popularMenu">
+         <img src="img/liuxing.png">
+         <h3>流行菜谱</h3>
+         <ul class="popularMenuList">
+           <li class="clearfix">
+             <img src="img/content2.png">
+             <p>抹茶鸡蛋饼</p>
+             <span class="author surplus">by 小小H的厨房小小H的厨房小小H的厨房</span>
+             <span class="fabulous"><img src="img/dianzan.png"><b>999999</b></span>
+           </li>
+           <li class="clearfix">
+             <img src="img/content3.png">
+             <p>抹茶鸡蛋饼</p>
+             <span class="author surplus">by 小小H的厨房小小H的厨房小小H的厨房</span>
+             <span class="fabulous"><img src="img/dianzan.png"><b>999999</b></span>
+           </li>
+           <li class="clearfix">
+             <img src="img/content6.png">
+             <p>抹茶鸡蛋饼</p>
+             <span class="author surplus">by 小小H的厨房小小H的厨房小小H的厨房</span>
+             <span class="fabulous"><img src="img/dianzan.png"><b>999999</b></span>
+           </li>
+         </ul>
+       </div>
+     </div>
+     <!-- 内容 --> 
+     
+      <!-- 底部 -->
+      <jsp:includepage="include/footer.jsp"/>
+     <!-- 底部 -->
+   
+     <script src="js/jquery-3.1.1.min.js"></script>  
+     <script>
+       $(function () {
+   
+       });
+     </script>
+   </body>
+   
+   </html>
+   ```
+
+   
