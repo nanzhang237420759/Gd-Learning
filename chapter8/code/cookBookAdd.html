@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>发布菜谱</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contentBox {
+      margin: 30px auto 62px;
+      background: #fff;
+    }
+
+    .editRegion {
+      margin: 0 auto;
+      padding: 30px 0;
+      width: 600px;
+    }
+
+    .editRegion input,
+    .editRegion textarea {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      width: calc(100% - 20px);
+      background: #f5f6f5;
+      border: 1px solid #dcdcdc;
+      font-size: 14px;
+      resize: none;
+    }
+
+    .editRegion textarea {
+      padding: 10px 0 10px 20px;
+    }
+
+    .editName {
+      height: 38px;
+    }
+
+    .editDescribe {
+      height: 60px;
+    }
+
+    .imgPicker,
+    .imgPicker2 {
+      width: 100%;
+      height: 400px;
+      display: block;
+      border: 1px solid #dcdcdc;
+      overflow: hidden;
+      background: url("img/fileImg.png") no-repeat center #f5f6f5;
+      background-position: 50% 160px;
+      text-align: center;
+      color: #888888;
+    }
+
+    .imgPicker2 {
+      display: inline-block;
+      width: 260px;
+      height: 170px;
+      background-position: 50% 40px;
+    }
+
+    .contentBox .imgPicker-file {
+      outline: none;
+      width: 0;
+      -webkit-opacity: 0;
+      -moz-opacity: 0;
+      opacity: 0;
+      position: absolute;
+      filter: opacity(0);
+    }
+
+    .imgPicker img,
+    .img-box {
+      width: 100%;
+      height: 100%;
+    }
+
+    .imgTips {
+      margin: 210px 0 10px;
+    }
+
+    .material {
+      font-size: 0;
+    }
+
+    .material input {
+      width: 258px;
+      height: 38px;
+      margin-right: 10px;
+    }
+
+    .materialDelete {
+      width: 20px;
+      height: 20px;
+      background: url("img/materialDelete.png") no-repeat center;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .editRegion h3 {
+      margin: 30px 0 20px;
+      font-size: 16px;
+    }
+
+    .editAdd {
+      width: 568px;
+      height: 38px;
+      line-height: 38px;
+      border: 1px dashed #dcdcdc;
+      color: #888888;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .practice li {
+      margin-bottom: 20px;
+    }
+
+    .practice p {
+      margin-bottom: 10px;
+    }
+
+    .practice textarea {
+      width: 548px;
+      height: 40px;
+    }
+
+    .practice .imgTips {
+      margin-top: 90px;
+    }
+
+    .practice .materialDelete {
+      margin-left: 5px;
+      vertical-align: initial;
+    }
+
+    .menuLabel li {
+      margin-bottom: 10px;
+    }
+
+    .menuLabel p {
+      margin-bottom: 10px;
+    }
+
+    .menuLabel span {
+      display: inline-block;
+      margin: 0 5px 10px 0;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #dcdcdc;
+      text-align: center;
+      cursor: pointer;
+      background: #f5f6f5;
+      color: #888888;
+    }
+
+    .editWarning img {
+      margin-right: 5px;
+    }
+
+    .editBut {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .editBut input {
+      width: 280px;
+      height: 40px;
+      border-radius: 4px;
+      background: #fc5a34;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="headBox" id="headBox"></div>
+  <!-- 头部 -->
+
+  <!-- 内容 --> 
+  <div class="contentBox">
+    <div class="editRegion">
+     <form action="" method="post" >
+          <input type="text" class="editName" name="title" placeholder="菜谱名称" />
+         <input type="text" class="editName" name="tags" placeholder="标签 多个用,分隔" /> 
+	     <textarea class="editDescribe" name="content"  placeholder="菜谱描述"></textarea>  
+	      <div class="editWarning"> 
+	        <span>请完整的填写所有信息！</span>
+	      </div>
+	
+	      <div class="editBut">
+	         <input type="submit" value="发&nbsp布"/>
+	      </div>
+       </form>
+    </div> 
+  </div> 
+  <!-- 内容 -->
+
+  <!-- 底部 -->
+  <div class="footer" id="footer"></div>
+  <!-- 底部 -->
+
+  <script src="js/jquery-3.1.1.min.js"></script> 
+  <script>
+    $(function () {
+       
+    });
+  </script>
+</body>
+
+</html>
